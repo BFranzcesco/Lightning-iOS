@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GeoLocalizer.locationManager(CLLocationManager, didUpdateLocations : [CLLocation]) -&gt; ():GeoLocalizer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "location">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Converter.convertDataToWeather(NSData) -&gt; Weather:Converter.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sunriseTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
