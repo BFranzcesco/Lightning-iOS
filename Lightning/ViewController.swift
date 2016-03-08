@@ -36,7 +36,7 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
         }
         
         if(weather.temperature != nil) {
-            temperatureLabel.text = String(format: "%.1f", weather.temperature!) + (Utils().getUnits() == Utils().METRIC ? "°C" : "°F")
+            temperatureLabel.text = String(format: "%.1f", weather.temperature!) + Utils().symbolBasedOnLocalUnits()
         }
         
         if(weather.description != nil) {
