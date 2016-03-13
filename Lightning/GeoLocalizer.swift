@@ -24,7 +24,7 @@ class GeoLocalizer: NSObject, CLLocationManagerDelegate {
         let latitude = locationObj.coordinate.latitude
         let longitude = locationObj.coordinate.longitude
         
-        let location = Location(latitude: latitude, longitude: longitude)
+        let location = Location(latitude: latitude, longitude: longitude, cityName: "")
         
         self.delegate!.onLocationGot(location)
     }
