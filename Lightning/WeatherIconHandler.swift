@@ -4,13 +4,11 @@ import UIKit
 class WeatherIconHandler {
     
     func getIconImageBasedOnCurrentTime(weatherID: Int, sunriseTime: Double, sunsetTime: Double) -> UIImage {
-        let sunrise = sunriseTime * 1000;
-        let sunset = sunsetTime * 1000;
         
         var imageName = "sunny"
         
         if (weatherID == 800) {
-            if (isDay(sunrise, sunsetTime: sunset)) {
+            if (isDay(sunriseTime, sunsetTime: sunsetTime)) {
                 imageName = "sunny"
             } else {
                 imageName =  "moon"
@@ -38,7 +36,7 @@ class WeatherIconHandler {
     }
     
     func isDay(sunriseTime: Double, sunsetTime: Double) -> Bool {
-        let currentTime = Double(NSDate().timeIntervalSince1970)
+        let currentTime = NSDate().timeIntervalSince1970
         return  currentTime >= sunriseTime && currentTime < sunsetTime;
     }
 
