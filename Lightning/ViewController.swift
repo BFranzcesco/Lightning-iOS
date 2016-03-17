@@ -6,6 +6,7 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var nightVeil: UIView!
     
     var locationUserDefaults = LocationUserDefaults()
     
@@ -33,6 +34,12 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
         
         if(weather.weatherID != nil){
             weatherIcon.image = WeatherIconHandler().getIconImageBasedOnCurrentTime(weather.weatherID!, sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)
+            
+            if(WeatherIconHandler().isDay(weather.sunriseTime!, sunsetTime: weather.sunsetTime!)) {
+                nightVeil.hidden = true
+            } else {
+                nightVeil.hidden = false
+            }
         }
         
         if(weather.temperature != nil) {

@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "WeatherIconHandler.isDay(Double, sunsetTime : Double) -&gt; Bool:WeatherIconHandler.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSDate().timeIntervalSince1970">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Converter.convertDataToWeather(NSData) -&gt; Weather:Converter.swift">
          <PersistentStrings>
             <PersistentString
