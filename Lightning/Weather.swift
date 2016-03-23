@@ -1,5 +1,3 @@
-import Foundation
-
 struct Weather {
     let cityName:String?
     let temperature:Double?

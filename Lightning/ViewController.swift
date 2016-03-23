@@ -13,10 +13,6 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
     let service = Service()
     let geolocalizer = GeoLocalizer()
     
-    @IBAction func refreshWeather(sender: AnyObject) {
-        geolocalizer.getCurrentLocation()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +55,6 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
     }
     
     func onError() {
-        
     }
     
     //CurrentLocationProtocol
