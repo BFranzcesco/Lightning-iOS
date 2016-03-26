@@ -15,8 +15,8 @@ class Utils {
         return IMPERIAL
     }
     
-    func getCountryCode() -> String {
-        return NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as! String
+    func getPhonePreferredLanguageCode() -> String {
+        return NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
     }
     
     func isMetric() -> Bool {

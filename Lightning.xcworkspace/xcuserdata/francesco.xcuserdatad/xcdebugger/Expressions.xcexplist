@@ -3,14 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GeoLocalizer.locationManager(CLLocationManager, didUpdateLocations : [CLLocation]) -&gt; ():GeoLocalizer.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "location">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "WeatherIconHandler.isDay(Double, sunsetTime : Double) -&gt; Bool:WeatherIconHandler.swift">
          <PersistentStrings>
             <PersistentString
@@ -23,6 +15,30 @@
          <PersistentStrings>
             <PersistentString
                value = "sunriseTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Utils.getPhoneLanguage() -&gt; String:Utils.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "getPhoneLanguage()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GeoLocalizer.locationManager(CLLocationManager, didUpdateLocations : [CLLocation]) -&gt; ():GeoLocalizer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "location">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Utils.isMetric() -&gt; Bool:Utils.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isMetric()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

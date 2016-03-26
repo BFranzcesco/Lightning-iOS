@@ -9,7 +9,7 @@ class Service {
         
         let baseURL = "http://api.openweathermap.org/data/2.5/weather?&appid=70dd46325ab4cc9a84786b6d73cc2662"
             + "&units=" + Utils().getUnits()
-            + "&lang=" + Utils().getCountryCode()
+            + "&lang=" + Utils().getPhonePreferredLanguageCode()
         
         Alamofire.request(.GET, baseURL, parameters: params as? [String : AnyObject])
             .responseJSON { response in
