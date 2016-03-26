@@ -22,7 +22,15 @@ class WeatherIconHandler {
                 case 7:
                     imageName =  "foggy"
                 case 8:
-                    imageName =  "cloudy"
+                    if (weatherID == 801 || weatherID == 802) {
+                        if (isDay(sunriseTime, sunsetTime: sunsetTime)) {
+                            imageName = "partly_cloudy"
+                        } else {
+                            imageName =  "partly_cloudy_moon"
+                        }
+                    } else {
+                        imageName =  "cloudy"
+                    }
                 case 6:
                     imageName =  "snowy"
                 case 5:
