@@ -29,4 +29,15 @@ class Utils {
         }
         return IMPERIAL_SYMBOL
     }
+    
+    func isAppFirstLaunch() -> Bool {
+        let launchedBefore = NSUserDefaults.standardUserDefaults().boolForKey("first_launch")
+        if launchedBefore  {
+            return false
+        } else {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "first_launch")
+            return true
+        }
+    }
+        
 }

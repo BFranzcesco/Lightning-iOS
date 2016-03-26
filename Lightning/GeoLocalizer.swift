@@ -8,7 +8,7 @@ class GeoLocalizer: NSObject, CLLocationManagerDelegate {
     
     func getCurrentLocation() {
         
-        if(!areLocationServiceEnabled()) {
+        if(!areLocationServiceEnabled() && !Utils().isAppFirstLaunch()) {
             self.delegate!.onLocationServicesDisabled()
         } else {
             locationManager.delegate = self
