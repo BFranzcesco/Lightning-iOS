@@ -3,22 +3,10 @@ import XCTest
 
 class WeatherIconTests: XCTestCase {
     
-    var WeatherImageName: [WeatherCode: String] = [
-        WeatherCode.THUNDER: "thunder",
-        WeatherCode.DRIZZLE: "drizzle",
-        WeatherCode.FOGGY: "foggy",
-        WeatherCode.CLEAR: "clear",
-        WeatherCode.FEW_CLOUDS: "partly_cloudy",
-        WeatherCode.SCATTERED_CLOUDS: "partly_cloudy",
-        WeatherCode.CLOUDY: "cloudy",
-        WeatherCode.SNOWY: "snowy",
-        WeatherCode.RAINY: "rainy"
-    ]
-    
     func testWhenIsClearImageNameIsClear() {
         let weatherCode = WeatherCode.CLEAR
         
-        let weatherImageName = getImageNameFrom(weatherCode)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
         
         XCTAssertEqual(weatherImageName, "clear")
     }
@@ -26,7 +14,7 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsThunderImageNameIsThunder() {
         let weatherCode = WeatherCode.THUNDER
         
-        let weatherImageName = getImageNameFrom(weatherCode)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
         
         XCTAssertEqual(weatherImageName, "thunder")
     }
@@ -34,12 +22,16 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsRainyImageNameIsRainy() {
         let weatherCode = WeatherCode.RAINY
         
-        let weatherImageName = getImageNameFrom(weatherCode)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
         
         XCTAssertEqual(weatherImageName, "rainy")
     }
     
-    func getImageNameFrom(weatherCode: WeatherCode) -> String {
-        return WeatherImageName[weatherCode]!
+    func testWhenIsClearAndIsNotDayImageNameIsClearMoon() {
+        let weatherCode = WeatherCode.CLEAR
+        
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0, isDayTime: true)
+        
+        XCTAssertEqual(weatherImageName, "clear_moon")
     }
 }
