@@ -24,7 +24,7 @@
 		A42D51791C8862B000244257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D51771C8862B000244257 /* Main.storyboard */; };
 		A42D517B1C8862B000244257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42D517A1C8862B000244257 /* Assets.xcassets */; };
 		A42D517E1C8862B000244257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D517C1C8862B000244257 /* LaunchScreen.storyboard */; };
-		A42D51891C8862B100244257 /* LightningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D51881C8862B100244257 /* LightningTests.swift */; };
+		A42D51891C8862B100244257 /* WeatherCodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D51881C8862B100244257 /* WeatherCodesTests.swift */; };
 		A42D51941C8862B100244257 /* LightningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D51931C8862B100244257 /* LightningUITests.swift */; };
 		A4DFE4011C89E7AA00ABC373 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFE4001C89E7AA00ABC373 /* Weather.swift */; };
 /* End PBXBuildFile section */
@@ -67,7 +67,7 @@
 		A42D517D1C8862B000244257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A42D517F1C8862B000244257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42D51841C8862B100244257 /* LightningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A42D51881C8862B100244257 /* LightningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningTests.swift; sourceTree = "<group>"; };
+		A42D51881C8862B100244257 /* WeatherCodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCodesTests.swift; sourceTree = "<group>"; };
 		A42D518A1C8862B100244257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42D518F1C8862B100244257 /* LightningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42D51931C8862B100244257 /* LightningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningUITests.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		A42D51671C8862B000244257 = {
 			isa = PBXGroup;
 			children = (
-				A42D51721C8862B000244257 /* \ */,
+				A42D51721C8862B000244257 /* Lightning */,
 				A42D51871C8862B100244257 /* LightningTests */,
 				A42D51921C8862B100244257 /* LightningUITests */,
 				A42D51711C8862B000244257 /* Products */,
@@ -188,7 +188,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A42D51721C8862B000244257 /* \ */ = {
+		A42D51721C8862B000244257 /* Lightning */ = {
 			isa = PBXGroup;
 			children = (
 				A42D51751C8862B000244257 /* ViewController.swift */,
@@ -204,14 +204,13 @@
 				A42D517C1C8862B000244257 /* LaunchScreen.storyboard */,
 				A42D517F1C8862B000244257 /* Info.plist */,
 			);
-			name = "\\";
 			path = Lightning;
 			sourceTree = "<group>";
 		};
 		A42D51871C8862B100244257 /* LightningTests */ = {
 			isa = PBXGroup;
 			children = (
-				A42D51881C8862B100244257 /* LightningTests.swift */,
+				A42D51881C8862B100244257 /* WeatherCodesTests.swift */,
 				A42D518A1C8862B100244257 /* Info.plist */,
 			);
 			path = LightningTests;
@@ -430,7 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A42D51891C8862B100244257 /* LightningTests.swift in Sources */,
+				A42D51891C8862B100244257 /* WeatherCodesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
