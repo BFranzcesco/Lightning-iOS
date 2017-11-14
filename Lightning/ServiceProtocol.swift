@@ -1,6 +1,6 @@
 import Foundation
 
 protocol ServiceProtocol {
-    func onDataReceived(data: NSData?)
+    func onDataReceived(data: Data?)
     func onError()
 }

@@ -27,10 +27,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>brandon_medium.ttf</string>
@@ -55,7 +51,20 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Badabumpatam</string>
+
+	<key>NSLocationAlwaysUsageDescription</key>
+		<string>Badabum</string>
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>Badabum</string>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Badabum</string>
+		
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+		<false/>
 </dict>
 </plist>

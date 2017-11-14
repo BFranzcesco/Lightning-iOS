@@ -3,8 +3,9 @@ import SwiftyJSON
 
 class Converter {
 
-    func convertDataToWeather(weatherData: NSData) -> Weather {
-        let json = JSON(data: weatherData)
+    func convertDataToWeather(weatherData: Data) -> Weather {
+        
+        let json = JSON(weatherData)
     
         let cityName = json["name"].string
         let description = json["weather"].first?.1["description"].string

@@ -8,7 +8,7 @@ class WeatherIconHandler {
         var imageName = "sunny"
         
         if (weatherID == 800) {
-            if (isDay(sunriseTime, sunsetTime: sunsetTime)) {
+            if (isDay(sunriseTime: sunriseTime, sunsetTime: sunsetTime)) {
                 imageName = "sunny"
             } else {
                 imageName =  "moon"
@@ -23,7 +23,7 @@ class WeatherIconHandler {
                     imageName =  "foggy"
                 case 8:
                     if (weatherID == 801 || weatherID == 802) {
-                        if (isDay(sunriseTime, sunsetTime: sunsetTime)) {
+                        if (isDay(sunriseTime: sunriseTime, sunsetTime: sunsetTime)) {
                             imageName = "partly_cloudy"
                         } else {
                             imageName =  "partly_cloudy_moon"

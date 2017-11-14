@@ -16,11 +16,11 @@ class Utils {
     }
     
     func getPhonePreferredLanguageCode() -> String {
-        return NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        return Locale.preferredLanguages[0]
     }
     
     func isMetric() -> Bool {
-        return NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem) as! Bool
+        return Locale.current.usesMetricSystem
     }
     
     func symbolBasedOnLocalUnits() -> String {
@@ -31,11 +31,11 @@ class Utils {
     }
     
     func isAppFirstLaunch() -> Bool {
-        let launchedBefore = NSUserDefaults.standardUserDefaults().boolForKey("first_launch")
+        let launchedBefore = UserDefaults.standard.bool(forKey: "first_launch")
         if launchedBefore  {
             return false
         } else {
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "first_launch")
+            UserDefaults.standard.set(true, forKey: "first_launch")
             return true
         }
     }

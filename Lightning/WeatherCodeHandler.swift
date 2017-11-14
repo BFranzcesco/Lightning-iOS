@@ -1,10 +1,10 @@
 class WeatherCodeHandler {
     
     func getWeatherCodeFrom(code: Int) -> WeatherCode {
-        if (isMostlyClear(code)) {
+        if (isMostlyClear(code: code)) {
             return WeatherCode(rawValue: code)!
         }
-        return simplify(code)
+        return simplify(code: code)
     }
     
     func isMostlyClear(code: Int) -> Bool {

@@ -13,28 +13,29 @@ class GeoLocalizer: NSObject, CLLocationManagerDelegate {
         } else {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+            locationManager.requestWhenInUseAuthorization()
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
     }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locationArray = locations as NSArray
         let locationObj = locationArray.lastObject as! CLLocation
         let latitude = locationObj.coordinate.latitude
         let longitude = locationObj.coordinate.longitude
-        
+
         let location = Location(latitude: latitude, longitude: longitude, cityName: "")
-        
-        self.delegate!.onLocationGot(location)
+
+        self.delegate!.onLocationGot(location: location)
     }
     
     func areLocationServiceEnabled() -> Bool {
         if (CLLocationManager.locationServicesEnabled()) {
             switch(CLLocationManager.authorizationStatus()) {
-                case .NotDetermined, .Restricted, .Denied:
+            case .notDetermined, .restricted, .denied:
                     return false
-                case .AuthorizedAlways, .AuthorizedWhenInUse:
+                case .authorizedAlways, .authorizedWhenInUse:
                     return true
             }
         }

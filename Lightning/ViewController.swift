@@ -16,7 +16,7 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         
         geolocalizer.delegate = self
         geolocalizer.getCurrentLocation()
@@ -29,12 +29,12 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
         cityNameLabel.text = weather.cityName
         
         if(weather.weatherID != nil){
-            weatherIcon.image = WeatherIconHandler().getIconImageBasedOnCurrentTime(weather.weatherID!, sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)
+            weatherIcon.image = WeatherIconHandler().getIconImageBasedOnCurrentTime(weatherID: weather.weatherID!, sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)
             
-            if(WeatherIconHandler().isDay(weather.sunriseTime!, sunsetTime: weather.sunsetTime!)) {
-                nightVeil.hidden = true
+            if(WeatherIconHandler().isDay(sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)) {
+                nightVeil.isHidden = true
             } else {
-                nightVeil.hidden = false
+                nightVeil.isHidden = false
             }
         }
         
@@ -43,15 +43,15 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
         }
         
         if(weather.description != nil) {
-            descriptionLabel.text = weather.description!.capitalizedString
+            descriptionLabel.text = weather.description!.capitalized
         }
         
     }
     
     //ServiceProtocol
-    func onDataReceived(data: NSData?) {
-        let weather = Converter().convertDataToWeather(data!)
-        renderWeather(weather)
+    func onDataReceived(data: Data?) {
+        let weather = Converter().convertDataToWeather(weatherData: data!)
+        renderWeather(weather: weather)
     }
     
     func onError() {
@@ -59,12 +59,12 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
     
     //CurrentLocationProtocol
     func onLocationGot(location: Location) {
-        service.getWeatherDataBasedOnLocation(location)
-        locationUserDefaults.store(location)
+        service.getWeatherDataBasedOnLocation(location: location)
+        locationUserDefaults.store(location: location)
     }
     
     func onLocationServicesDisabled() {
-        service.getWeatherDataBasedOnLocation(locationUserDefaults.read())
+        service.getWeatherDataBasedOnLocation(location: locationUserDefaults.read())
     }
 }
 
