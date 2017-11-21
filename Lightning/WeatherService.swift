@@ -1,9 +1,9 @@
 import Foundation
 import Alamofire
 
-class Service {
-    
-    var delegate:ServiceProtocol?
+class WeatherService {
+
+    var delegate: WeatherServiceDelegate?
 
     func getWeatherDataWithParams(params: [String:AnyObject]) {
         
@@ -23,11 +23,6 @@ class Service {
             }.responseString{ response in
         }
         
-    }
-    
-    func getWeatherDataBasedOnCity(cityName: String) {
-        let params = ["q":cityName]
-        getWeatherDataWithParams(params: params as [String : AnyObject])
     }
     
     func getWeatherDataBasedOnLocation(location: Location) {

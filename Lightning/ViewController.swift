@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
+class ViewController: UIViewController, LocationProtocol, WeatherView {
 
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -10,8 +10,9 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
     
     var locationUserDefaults = LocationUserDefaults()
     
-    let service = Service()
+    let service = WeatherService()
     let geolocator = GeoLocator()
+    var presenter: WeatherPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +21,20 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
         
         geolocator.delegate = self
         geolocator.getCurrentLocation()
-        
-        service.delegate = self
+
+        let service = WeatherService()
+        presenter = WeatherPresenter(service: service, view: self)
+    }
+
+    func show(weather: Weather) {
+        renderWeather(weather: weather)
+    }
+
+    func showError() {
+
     }
     
-    func renderWeather(weather: Weather) {
+    private func renderWeather(weather: Weather) {
         
         cityNameLabel.text = weather.cityName
         
@@ -48,23 +58,14 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
         
     }
     
-    //ServiceProtocol
-    func onDataReceived(data: Data?) {
-        let weather = Converter().convertDataToWeather(weatherData: data!)
-        renderWeather(weather: weather)
-    }
-    
-    func onError() {
-    }
-    
     //CurrentLocationProtocol
     func onLocationGot(location: Location) {
-        service.getWeatherDataBasedOnLocation(location: location)
+        presenter?.weather(for: location)
         locationUserDefaults.store(location: location)
     }
     
     func onLocationServicesDisabled() {
-        service.getWeatherDataBasedOnLocation(location: locationUserDefaults.read())
+        presenter?.weather(for: locationUserDefaults.read())
     }
 }
 
