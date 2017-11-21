@@ -1,7 +1,7 @@
 import Foundation
 import CoreLocation
 
-class GeoLocalizer: NSObject, CLLocationManagerDelegate {
+class GeoLocator: NSObject, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var delegate:LocationProtocol?

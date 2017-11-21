@@ -11,15 +11,15 @@ class ViewController: UIViewController, ServiceProtocol, LocationProtocol {
     var locationUserDefaults = LocationUserDefaults()
     
     let service = Service()
-    let geolocalizer = GeoLocalizer()
+    let geolocator = GeoLocator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        geolocalizer.delegate = self
-        geolocalizer.getCurrentLocation()
+        geolocator.delegate = self
+        geolocator.getCurrentLocation()
         
         service.delegate = self
     }

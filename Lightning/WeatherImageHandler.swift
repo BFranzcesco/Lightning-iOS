@@ -2,12 +2,6 @@ import Foundation
 
 class WeatherImageHandler {
     
-    let context: DateUtils
-    
-    init(managedObjectContext: DateUtils) {
-        self.context = managedObjectContext
-    }
-    
     func getImageNameFrom(weatherCode: WeatherCode, sunriseTime: Double, sunsetTime: Double, isDayTime: Bool = false) -> String {
         let MOON = "_moon"
         if(WeatherCodeHandler().isMostlyClear(code: weatherCode.rawValue)) {

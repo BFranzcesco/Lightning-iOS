@@ -6,7 +6,7 @@ class WeatherCodeTests: XCTestCase {
     func testTwo() {
         let code = 203
         
-        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code)
+        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code: code)
         
         XCTAssertEqual(WeatherCode.THUNDER, weatherID)
     }
@@ -14,7 +14,7 @@ class WeatherCodeTests: XCTestCase {
     func testThree() {
         let code = 304
         
-        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code)
+        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code: code)
         
         XCTAssertEqual(WeatherCode.DRIZZLE, weatherID)
     }
@@ -22,7 +22,7 @@ class WeatherCodeTests: XCTestCase {
     func test800() {
         let code = 800
             
-        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code)
+        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code: code)
             
         XCTAssertEqual(WeatherCode.CLEAR, weatherID)
     }
@@ -30,7 +30,7 @@ class WeatherCodeTests: XCTestCase {
     func test8() {
         let code = 803
         
-        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code)
+        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code: code)
         
         XCTAssertEqual(WeatherCode.CLOUDY, weatherID)
     }
@@ -38,7 +38,7 @@ class WeatherCodeTests: XCTestCase {
     func test801() {
         let code = 801
         
-        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code)
+        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code: code)
         
         XCTAssertEqual(WeatherCode.FEW_CLOUDS, weatherID)
     }
@@ -46,7 +46,7 @@ class WeatherCodeTests: XCTestCase {
     func test802() {
         let code = 802
         
-        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code)
+        let weatherID = WeatherCodeHandler().getWeatherCodeFrom(code: code)
         
         XCTAssertEqual(WeatherCode.SCATTERED_CLOUDS, weatherID)
     }

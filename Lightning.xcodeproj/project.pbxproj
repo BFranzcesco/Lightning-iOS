@@ -17,7 +17,7 @@
 		1350160F1C8B0F9C00690981 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350160E1C8B0F9C00690981 /* Service.swift */; };
 		135016111C8B104F00690981 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135016101C8B104F00690981 /* ServiceProtocol.swift */; };
 		135016131C8B13C200690981 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135016121C8B13C200690981 /* Utils.swift */; };
-		135016151C8B159D00690981 /* GeoLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135016141C8B159D00690981 /* GeoLocalizer.swift */; };
+		135016151C8B159D00690981 /* GeoLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135016141C8B159D00690981 /* GeoLocator.swift */; };
 		135016171C8B15AB00690981 /* LocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135016161C8B15AB00690981 /* LocationProtocol.swift */; };
 		136EC3891CBFDDA30078C105 /* WeatherImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136EC3881CBFDDA30078C105 /* WeatherImageName.swift */; };
 		136EC38B1CBFECE50078C105 /* WeatherImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136EC38A1CBFECE50078C105 /* WeatherImageHandler.swift */; };
@@ -65,7 +65,7 @@
 		1350160E1C8B0F9C00690981 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		135016101C8B104F00690981 /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		135016121C8B13C200690981 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		135016141C8B159D00690981 /* GeoLocalizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocalizer.swift; sourceTree = "<group>"; };
+		135016141C8B159D00690981 /* GeoLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocator.swift; sourceTree = "<group>"; };
 		135016161C8B15AB00690981 /* LocationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProtocol.swift; sourceTree = "<group>"; };
 		136EC3881CBFDDA30078C105 /* WeatherImageName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherImageName.swift; sourceTree = "<group>"; };
 		136EC38A1CBFECE50078C105 /* WeatherImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherImageHandler.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		1324A4861C8E14D30024421C /* GeoLocalizer */ = {
 			isa = PBXGroup;
 			children = (
-				135016141C8B159D00690981 /* GeoLocalizer.swift */,
+				135016141C8B159D00690981 /* GeoLocator.swift */,
 				135016161C8B15AB00690981 /* LocationProtocol.swift */,
 			);
 			name = GeoLocalizer;
@@ -557,7 +557,7 @@
 				A42D51761C8862B000244257 /* ViewController.swift in Sources */,
 				132C14AA1C8AD9830094D0D4 /* LocationUserDefaults.swift in Sources */,
 				13B2B3B51C8AEF5D002ED923 /* Location.swift in Sources */,
-				135016151C8B159D00690981 /* GeoLocalizer.swift in Sources */,
+				135016151C8B159D00690981 /* GeoLocator.swift in Sources */,
 				A4DFE4011C89E7AA00ABC373 /* Weather.swift in Sources */,
 				136EC38B1CBFECE50078C105 /* WeatherImageHandler.swift in Sources */,
 				A42D51741C8862B000244257 /* AppDelegate.swift in Sources */,

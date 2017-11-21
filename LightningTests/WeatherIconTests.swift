@@ -6,7 +6,7 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsClearImageNameIsClear() {
         let weatherCode = WeatherCode.CLEAR
         
-        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
         
         XCTAssertEqual(weatherImageName, "clear")
     }
@@ -14,7 +14,7 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsThunderImageNameIsThunder() {
         let weatherCode = WeatherCode.THUNDER
         
-        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
         
         XCTAssertEqual(weatherImageName, "thunder")
     }
@@ -22,7 +22,7 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsRainyImageNameIsRainy() {
         let weatherCode = WeatherCode.RAINY
         
-        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
         
         XCTAssertEqual(weatherImageName, "rainy")
     }
@@ -30,7 +30,7 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsClearAndIsNotDayImageNameIsClearMoon() {
         let weatherCode = WeatherCode.CLEAR
         
-        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode, sunriseTime: 0.0, sunsetTime: 1.0, isDayTime: true)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 1.0, isDayTime: true)
         
         XCTAssertEqual(weatherImageName, "clear_moon")
     }
