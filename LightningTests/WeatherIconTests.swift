@@ -6,7 +6,7 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsClearImageNameIsClear() {
         let weatherCode = WeatherCode.CLEAR
         
-        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 2000000000.0)
         
         XCTAssertEqual(weatherImageName, "clear")
     }
