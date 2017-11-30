@@ -1,37 +1,16 @@
-import Foundation
+class WeatherPresenter: WeatherInteractorDelegate {
 
-class WeatherPresenter: WeatherServiceDelegate, LocationProtocol {
+    let view: WeatherView
 
-    let service: WeatherService
-    let geolocator: GeoLocator
-    weak var view: WeatherView?
-
-    init(service: WeatherService, geolocator: GeoLocator, view: WeatherView) {
-        self.service = service
-        self.geolocator = geolocator
+    init(view: WeatherView) {
         self.view = view
-        service.delegate = self
-        geolocator.delegate = self
     }
 
-    func weather() {
-        geolocator.getCurrentLocation()
+    func present(weather: Weather) {
+        view.show(weather: weather)
     }
 
-    func onDataReceived(data: Data) {
-        let weather = Converter().convertDataToWeather(weatherData: data)
-        view?.show(weather: weather)
-    }
-
-    func onError() {
-        view?.showError()
-    }
-
-    func onLocationGot(location: Location) {
-        service.getWeatherDataBasedOnLocation(location: location)
-    }
-
-    func onLocationServicesDisabled() {
-        view?.showError()
+    func presentError() {
+        view.showError()
     }
 }

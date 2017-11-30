@@ -15,31 +15,22 @@ class ViewController: UIViewController, WeatherView {
         super.viewDidLoad()
         
         UIApplication.shared.statusBarStyle = .lightContent
-        changeStatusBarColor(to: lightStatusBarColor)
 
         let service = WeatherService()
         let geolocator = GeoLocator()
-        let presenter = WeatherPresenter(service: service, geolocator: geolocator, view: self)
-
-        presenter.weather()
-    }
-
-    // MARK: - WeatherView
-    func show(weather: Weather) {
-        renderWeather(weather: weather)
-    }
-
-    func showError() {
-
+        let presenter = WeatherPresenter(view: self)
+        let interactor = WeatherInteractor(service: service, geolocator: geolocator, delegate: presenter)
+        
+        interactor.weather()
     }
     
-    private func renderWeather(weather: Weather) {
-        
+    func show(weather: Weather) {
+
         cityNameLabel.text = weather.cityName
-        
+
         if(weather.weatherID != nil){
-            weatherIcon.image = WeatherIconHandler().getIconImageBasedOnCurrentTime(weatherID: weather.weatherID!, sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)
-            
+            weatherIcon.image =  WeatherIconHandler().getIconImageBasedOnCurrentTime(weatherID: weather.weatherID!, sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)
+
             if(WeatherIconHandler().isDay(sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)) {
                 nightVeil.isHidden = true
                 changeStatusBarColor(to: lightStatusBarColor)
@@ -48,15 +39,18 @@ class ViewController: UIViewController, WeatherView {
                 changeStatusBarColor(to: darkStatusBarColor)
             }
         }
-        
+
         if(weather.temperature != nil) {
             temperatureLabel.text = String(format: "%.1f", weather.temperature!) + Utils().symbolBasedOnLocalUnits()
         }
-        
+
         if(weather.description != nil) {
             descriptionLabel.text = weather.description!.capitalized
         }
-        
+    }
+
+    func showError() {
+
     }
 
     private func changeStatusBarColor(to color: UIColor) {
