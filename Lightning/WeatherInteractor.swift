@@ -1,6 +1,6 @@
 import Foundation
 
-class WeatherInteractor: WeatherServiceDelegate, LocationProtocol {
+class WeatherInteractor: WeatherServiceDelegate, LocationDelegate {
 
     let service: WeatherService
     let geolocator: GeoLocator
@@ -14,6 +14,12 @@ class WeatherInteractor: WeatherServiceDelegate, LocationProtocol {
         geolocator.delegate = self
     }
 
+    func weather() {
+        geolocator.getCurrentLocation()
+    }
+
+    //MARK: - ServiceDelegate
+
     func onDataReceived(data: Data) {
         let weather = Converter().convertDataToWeather(weatherData: data)
         delegate.present(weather: weather)
@@ -23,15 +29,13 @@ class WeatherInteractor: WeatherServiceDelegate, LocationProtocol {
         delegate.presentError()
     }
 
+    //MARK: - LocationDelegate
+
     func onLocationServicesDisabled() {
         delegate.presentError()
     }
 
     func onLocationGot(location: Location) {
         service.getWeatherDataBasedOnLocation(location: location)
-    }
-
-    func weather() {
-        geolocator.getCurrentLocation()
     }
 }

@@ -30,7 +30,7 @@ class WeatherIconTests: XCTestCase {
     func testWhenIsClearAndIsNotDayImageNameIsClearMoon() {
         let weatherCode = WeatherCode.CLEAR
         
-        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 1.0, isDayTime: true)
+        let weatherImageName = WeatherImageHandler().getImageNameFrom(weatherCode: weatherCode, sunriseTime: 0.0, sunsetTime: 1.0)
         
         XCTAssertEqual(weatherImageName, "clear_moon")
     }

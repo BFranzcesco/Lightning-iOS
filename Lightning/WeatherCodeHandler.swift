@@ -8,7 +8,7 @@ class WeatherCodeHandler {
     }
     
     func isMostlyClear(code: Int) -> Bool {
-        return code == 800 || code==801 || code==802
+        return code == 800 || code == 801 || code == 802
     }
     
     func simplify(code: Int) -> WeatherCode {

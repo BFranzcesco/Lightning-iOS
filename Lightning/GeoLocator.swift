@@ -4,7 +4,7 @@ import CoreLocation
 class GeoLocator: NSObject, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
-    var delegate: LocationProtocol?
+    var delegate: LocationDelegate?
     
     func getCurrentLocation() {
         
