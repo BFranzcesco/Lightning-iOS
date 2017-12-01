@@ -22,6 +22,8 @@
 		13540C7D1FD047860046EB14 /* WeatherInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540C7C1FD047860046EB14 /* WeatherInteractorTests.swift */; };
 		13540C7F1FD047B50046EB14 /* WeatherInteractorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540C7E1FD047B50046EB14 /* WeatherInteractorDelegate.swift */; };
 		13540C811FD047E60046EB14 /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540C801FD047E60046EB14 /* WeatherInteractor.swift */; };
+		13540C831FD066B40046EB14 /* DisplayedWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540C821FD066B40046EB14 /* DisplayedWeather.swift */; };
+		13540C851FD067850046EB14 /* WeatherTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13540C841FD067850046EB14 /* WeatherTheme.swift */; };
 		136EC3891CBFDDA30078C105 /* WeatherImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136EC3881CBFDDA30078C105 /* WeatherImageName.swift */; };
 		136EC38B1CBFECE50078C105 /* WeatherImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136EC38A1CBFECE50078C105 /* WeatherImageHandler.swift */; };
 		136EC38D1CBFEDE40078C105 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136EC38C1CBFEDE40078C105 /* DateUtils.swift */; };
@@ -76,6 +78,8 @@
 		13540C7C1FD047860046EB14 /* WeatherInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractorTests.swift; sourceTree = "<group>"; };
 		13540C7E1FD047B50046EB14 /* WeatherInteractorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractorDelegate.swift; sourceTree = "<group>"; };
 		13540C801FD047E60046EB14 /* WeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractor.swift; sourceTree = "<group>"; };
+		13540C821FD066B40046EB14 /* DisplayedWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedWeather.swift; sourceTree = "<group>"; };
+		13540C841FD067850046EB14 /* WeatherTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTheme.swift; sourceTree = "<group>"; };
 		136EC3881CBFDDA30078C105 /* WeatherImageName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherImageName.swift; sourceTree = "<group>"; };
 		136EC38A1CBFECE50078C105 /* WeatherImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherImageHandler.swift; sourceTree = "<group>"; };
 		136EC38C1CBFEDE40078C105 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				13EB72C91FC473BB0004D879 /* WeatherView.swift */,
 				13540C7E1FD047B50046EB14 /* WeatherInteractorDelegate.swift */,
 				13540C801FD047E60046EB14 /* WeatherInteractor.swift */,
+				13540C821FD066B40046EB14 /* DisplayedWeather.swift */,
+				13540C841FD067850046EB14 /* WeatherTheme.swift */,
 			);
 			path = Lightning;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 				13B2B3B51C8AEF5D002ED923 /* Location.swift in Sources */,
 				135016151C8B159D00690981 /* GeoLocator.swift in Sources */,
 				A4DFE4011C89E7AA00ABC373 /* Weather.swift in Sources */,
+				13540C831FD066B40046EB14 /* DisplayedWeather.swift in Sources */,
 				136EC38B1CBFECE50078C105 /* WeatherImageHandler.swift in Sources */,
 				13EB72CA1FC473BB0004D879 /* WeatherView.swift in Sources */,
 				A42D51741C8862B000244257 /* AppDelegate.swift in Sources */,
@@ -587,6 +594,7 @@
 				1324A4831C8E00BE0024421C /* WeatherIconImageHandler.swift in Sources */,
 				13540C7F1FD047B50046EB14 /* WeatherInteractorDelegate.swift in Sources */,
 				135016111C8B104F00690981 /* WeatherServiceDelegate.swift in Sources */,
+				13540C851FD067850046EB14 /* WeatherTheme.swift in Sources */,
 				1350160F1C8B0F9C00690981 /* WeatherService.swift in Sources */,
 				136EC38D1CBFEDE40078C105 /* DateUtils.swift in Sources */,
 				1324A48B1C8E15D40024421C /* Converter.swift in Sources */,

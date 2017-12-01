@@ -30,7 +30,7 @@ class WeatherPresenterTests: XCTestCase {
         var showWeatherIsCalled = false
         var showErrorIsCalled = false
 
-        func show(weather: Weather) {
+        func show(weather: DisplayedWeather) {
             showWeatherIsCalled = true
         }
 

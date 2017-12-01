@@ -21,53 +21,17 @@ class ViewController: UIViewController, WeatherView {
         interactor.weather()
     }
 
-    private func getIcon(for weather: Weather) -> UIImage {
-        return WeatherIconHandler().getIconImageBasedOnCurrentTime(weatherID: weather.weatherID!, sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)
-    }
-    
-    func show(weather: Weather) {
-
+    func show(weather: DisplayedWeather) {
         cityNameLabel.text = weather.cityName
-
-        if(weather.weatherID != nil) {
-            weatherIcon.image = getIcon(for: weather)
-            if(WeatherIconHandler().isDay(sunriseTime: weather.sunriseTime!, sunsetTime: weather.sunsetTime!)) {
-                Theme.Day.applyTo(darkView: nightVeil, statusBar: statusBar())
-            } else {
-                Theme.Night.applyTo(darkView: nightVeil, statusBar: statusBar())
-            }
-        }
-
-        if(weather.temperature != nil) {
-            temperatureLabel.text = String(format: "%.1f", weather.temperature!) + Utils().symbolBasedOnLocalUnits()
-        }
-
-        if(weather.description != nil) {
-            descriptionLabel.text = weather.description!.capitalized
-        }
+        descriptionLabel.text = weather.description
+        temperatureLabel.text = weather.temperature
+        weatherIcon.image = weather.icon
+        nightVeil.isHidden = weather.theme.lightMode
+        statusBar().backgroundColor = weather.theme.statusBarColor
     }
 
     func showError() {
 
-    }
-
-    private class Theme {
-
-        static let Day = Theme(darkMode: false, statusBarColor: UIColor(red: 0.00, green: 0.24, blue: 0.33, alpha: 1.0))
-        static let Night = Theme(darkMode: true, statusBarColor: UIColor(red: 0.00, green: 0.61, blue: 0.72, alpha: 1.0))
-
-        let darkMode: Bool
-        let statusBarColor: UIColor
-
-        init(darkMode: Bool, statusBarColor: UIColor) {
-            self.darkMode = darkMode
-            self.statusBarColor = statusBarColor
-        }
-
-        func applyTo(darkView: UIView, statusBar: UIView) {
-            darkView.isHidden = darkMode
-            statusBar.backgroundColor = statusBarColor
-        }
     }
 
     private func statusBar() -> UIView {

@@ -1,3 +1,5 @@
+import Foundation
+
 struct Weather {
     let cityName:String?
     let temperature:Double?
@@ -5,4 +7,9 @@ struct Weather {
     let sunriseTime: Double?
     let sunsetTime: Double?
     let weatherID: Int?
+
+    func isDayTime() -> Bool {
+        let currentTime = NSDate().timeIntervalSince1970
+        return  currentTime >= sunriseTime! && currentTime < sunsetTime!;
+    }
 }

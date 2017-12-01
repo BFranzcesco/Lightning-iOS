@@ -3,18 +3,18 @@ import UIKit
 
 class WeatherIconHandler {
     
-    func getIconImageBasedOnCurrentTime(weatherID: Int, sunriseTime: Double, sunsetTime: Double) -> UIImage {
+    func getIconImageBasedOnCurrentTime(weather: Weather) -> UIImage {
         
         var imageName = "sunny"
         
-        if (weatherID == 800) {
-            if (isDay(sunriseTime: sunriseTime, sunsetTime: sunsetTime)) {
+        if (weather.weatherID! == 800) {
+            if (weather.isDayTime()) {
                 imageName = "sunny"
             } else {
                 imageName =  "moon"
             }
         } else {
-            switch (weatherID / 100) {
+            switch (weather.weatherID! / 100) {
                 case 2:
                     imageName =  "thunder"
                 case 3:
@@ -22,8 +22,8 @@ class WeatherIconHandler {
                 case 7:
                     imageName =  "foggy"
                 case 8:
-                    if (weatherID == 801 || weatherID == 802) {
-                        if (isDay(sunriseTime: sunriseTime, sunsetTime: sunsetTime)) {
+                    if (weather.weatherID == 801 || weather.weatherID == 802) {
+                        if (weather.isDayTime()) {
                             imageName = "partly_cloudy"
                         } else {
                             imageName =  "partly_cloudy_moon"
@@ -41,11 +41,6 @@ class WeatherIconHandler {
         }
         
         return UIImage(named: imageName)!
-    }
-    
-    func isDay(sunriseTime: Double, sunsetTime: Double) -> Bool {
-        let currentTime = NSDate().timeIntervalSince1970
-        return  currentTime >= sunriseTime && currentTime < sunsetTime;
     }
 
 }
