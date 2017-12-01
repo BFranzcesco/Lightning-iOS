@@ -3,7 +3,7 @@ import XCTest
 
 class WeatherPresenterTests: XCTestCase {
 
-    let weather = Weather(cityName: "A_CITY_NAME", temperature: 12.00, description: "A_DESCRIPTION", sunriseTime: 1, sunsetTime: 2, weatherID: 100)
+    let weather = Weather(cityName: "A_CITY_NAME", temperature: 12.00, description: "A_DESCRIPTION", sunriseTime: 1, sunsetTime: 2, weatherID: 200)
 
     var view = SpyWeatherView()
 
@@ -29,8 +29,10 @@ class WeatherPresenterTests: XCTestCase {
 
         var showWeatherIsCalled = false
         var showErrorIsCalled = false
+        var displayedWeather = DisplayedWeather(cityName: "", icon: UIImage(), theme: WeatherTheme.Day, temperature: "", description: "")
 
         func show(weather: DisplayedWeather) {
+            displayedWeather = weather
             showWeatherIsCalled = true
         }
 

@@ -4,20 +4,17 @@ class WeatherImageHandler {
 
     let MOON = "_moon"
 
-    func getImageNameFrom(weatherCode: WeatherCode, sunriseTime: Double, sunsetTime: Double) -> String {
+    func getImageNameFrom(weather: Weather) -> String {
 
-        if(WeatherCodeHandler().isMostlyClear(code: weatherCode.rawValue)) {
-            if (!isDay(sunriseTime: sunriseTime, sunsetTime: sunsetTime)) {
+        let weatherCode = WeatherCodeHandler().getWeatherCodeFrom(id: weather.weatherID!)
+
+        if(WeatherCodeHandler().isMostlyClear(id: weather.weatherID!)) {
+            if (!weather.isDayTime()) {
                 var imageName = WeatherImageName[weatherCode]!
                 imageName.append(MOON)
                 return imageName
             }
         }
         return WeatherImageName[weatherCode]!
-    }
-    
-    func isDay(sunriseTime: Double, sunsetTime: Double) -> Bool {
-        let currentTime = NSDate().timeIntervalSince1970
-        return currentTime >= sunriseTime && currentTime < sunsetTime
     }
 }
