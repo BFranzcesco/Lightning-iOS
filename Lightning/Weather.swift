@@ -6,10 +6,14 @@ struct Weather {
     let description: String?
     let sunriseTime: Double?
     let sunsetTime: Double?
-    let weatherID: Int?
+    let id: Int?
 
     func isDayTime() -> Bool {
         let currentTime = NSDate().timeIntervalSince1970
         return  currentTime >= sunriseTime! && currentTime < sunsetTime!;
+    }
+
+    func isMostlyClear() -> Bool {
+        return id == 800 || id == 801 || id == 802
     }
 }

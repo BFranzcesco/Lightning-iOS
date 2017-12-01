@@ -28,6 +28,6 @@ class WeatherPresenter: WeatherInteractorDelegate {
     }
 
     private func getIcon(for weather: Weather) -> UIImage {
-        return UIImage(named: WeatherImageHandler().getImageNameFrom(weather: weather))!
+        return UIImage(named: WeatherImage().name(from: weather))!
     }
 }

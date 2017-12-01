@@ -3,7 +3,7 @@ import SwiftyJSON
 
 class Converter {
 
-    func convertDataToWeather(weatherData: Data) -> Weather {
+    func dataToWeather(weatherData: Data) -> Weather {
         
         let json = JSON(weatherData)
     
@@ -12,8 +12,8 @@ class Converter {
         let temperature = json["main"]["temp"].double
         let sunriseTime = json["sys"]["sunrise"].double
         let sunsetTime = json["sys"]["sunset"].double
-        let weatherID = json["weather"].first?.1["id"].int
+        let id = json["weather"].first?.1["id"].int
         
-        return Weather(cityName: cityName, temperature: temperature, description: description, sunriseTime: sunriseTime, sunsetTime: sunsetTime, weatherID: weatherID)
+        return Weather(cityName: cityName, temperature: temperature, description: description, sunriseTime: sunriseTime, sunsetTime: sunsetTime, id: id)
     }
 }

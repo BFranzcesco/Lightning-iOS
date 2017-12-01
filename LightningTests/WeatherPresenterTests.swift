@@ -3,7 +3,7 @@ import XCTest
 
 class WeatherPresenterTests: XCTestCase {
 
-    let weather = Weather(cityName: "A_CITY_NAME", temperature: 12.0, description: "A_DESCRIPTION", sunriseTime: 10, sunsetTime: 2000000000.0, weatherID: 200)
+    let weather = Weather(cityName: "A_CITY_NAME", temperature: 12.0, description: "A_DESCRIPTION", sunriseTime: 10, sunsetTime: 2000000000.0, id: 200)
 
     var view = SpyWeatherView()
 
@@ -33,7 +33,7 @@ class WeatherPresenterTests: XCTestCase {
         XCTAssertEqual("A_CITY_NAME", view.displayedWeather.cityName)
         XCTAssertEqual("A_Description", view.displayedWeather.description)
         XCTAssertEqual("12.0°F", view.displayedWeather.temperature)
-        XCTAssertEqual(UIImage(named: WeatherImageHandler().getImageNameFrom(weather: weather)), view.displayedWeather.icon)
+        XCTAssertEqual(UIImage(named: WeatherImage().name(from: weather)), view.displayedWeather.icon)
         XCTAssertTrue(WeatherTheme.Day == view.displayedWeather.theme)
     }
 

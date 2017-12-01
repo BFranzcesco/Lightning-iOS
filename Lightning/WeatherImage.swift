@@ -1,14 +1,14 @@
 import Foundation
 
-class WeatherImageHandler {
+class WeatherImage {
 
     let MOON = "_moon"
 
-    func getImageNameFrom(weather: Weather) -> String {
+    func name(from weather: Weather) -> String {
 
-        let weatherCode = WeatherCodeHandler().getWeatherCodeFrom(id: weather.weatherID!)
+        let weatherCode = WeatherCodeHandler().code(from: weather)
 
-        if(WeatherCodeHandler().isMostlyClear(id: weather.weatherID!)) {
+        if(weather.isMostlyClear()) {
             if (!weather.isDayTime()) {
                 var imageName = WeatherImageName[weatherCode]!
                 imageName.append(MOON)

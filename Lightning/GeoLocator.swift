@@ -30,7 +30,7 @@ class GeoLocator: NSObject, CLLocationManagerDelegate {
         self.delegate!.onLocationGot(location: location)
     }
     
-    func areLocationServiceEnabled() -> Bool {
+    private func areLocationServiceEnabled() -> Bool {
         if (CLLocationManager.locationServicesEnabled()) {
             switch(CLLocationManager.authorizationStatus()) {
             case .notDetermined, .restricted, .denied:

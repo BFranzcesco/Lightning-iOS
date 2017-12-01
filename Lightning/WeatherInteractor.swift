@@ -21,7 +21,7 @@ class WeatherInteractor: WeatherServiceDelegate, LocationDelegate {
     //MARK: - ServiceDelegate
 
     func onDataReceived(data: Data) {
-        let weather = Converter().convertDataToWeather(weatherData: data)
+        let weather = Converter().dataToWeather(weatherData: data)
         delegate.present(weather: weather)
     }
 

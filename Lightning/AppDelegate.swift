@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Lightning
-//
-//  Created by Mintaka on 03/03/16.
-//  Copyright © 2016 Mintaka. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
