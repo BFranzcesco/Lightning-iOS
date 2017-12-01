@@ -12,4 +12,8 @@ class WeatherTheme {
         self.lightMode = lightMode
         self.statusBarColor = statusBarColor
     }
+
+    static func == (lhs: WeatherTheme, rhs: WeatherTheme) -> Bool {
+        return lhs.lightMode == rhs.lightMode && lhs.statusBarColor == rhs.statusBarColor
+    }
 }
