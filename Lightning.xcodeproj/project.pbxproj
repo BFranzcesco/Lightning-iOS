@@ -33,7 +33,7 @@
 		13EB72CA1FC473BB0004D879 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB72C91FC473BB0004D879 /* WeatherView.swift */; };
 		6AA5FF961C5E5D2A4F0526F4 /* Pods_LightningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6409E667DB5112D63C83F7 /* Pods_LightningTests.framework */; };
 		A42D51741C8862B000244257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D51731C8862B000244257 /* AppDelegate.swift */; };
-		A42D51761C8862B000244257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D51751C8862B000244257 /* ViewController.swift */; };
+		A42D51761C8862B000244257 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D51751C8862B000244257 /* WeatherViewController.swift */; };
 		A42D51791C8862B000244257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D51771C8862B000244257 /* Main.storyboard */; };
 		A42D517B1C8862B000244257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42D517A1C8862B000244257 /* Assets.xcassets */; };
 		A42D517E1C8862B000244257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D517C1C8862B000244257 /* LaunchScreen.storyboard */; };
@@ -94,7 +94,7 @@
 		A341A20669039D9E034C1F3F /* Pods-LightningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightningTests/Pods-LightningTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A42D51701C8862B000244257 /* Lightning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lightning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42D51731C8862B000244257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A42D51751C8862B000244257 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A42D51751C8862B000244257 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		A42D51781C8862B000244257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A42D517A1C8862B000244257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A42D517D1C8862B000244257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		A42D51721C8862B000244257 /* Lightning */ = {
 			isa = PBXGroup;
 			children = (
-				A42D51751C8862B000244257 /* ViewController.swift */,
+				A42D51751C8862B000244257 /* WeatherViewController.swift */,
 				1324A4881C8E150F0024421C /* Models */,
 				1324A4871C8E14FC0024421C /* Fonts */,
 				1324A4861C8E14D30024421C /* GeoLocalizer */,
@@ -572,7 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A42D51761C8862B000244257 /* ViewController.swift in Sources */,
+				A42D51761C8862B000244257 /* WeatherViewController.swift in Sources */,
 				13EB72C81FC46DB70004D879 /* WeatherPresenter.swift in Sources */,
 				132C14AA1C8AD9830094D0D4 /* LocationUserDefaults.swift in Sources */,
 				13B2B3B51C8AEF5D002ED923 /* Location.swift in Sources */,

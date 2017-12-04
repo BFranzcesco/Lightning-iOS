@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, WeatherView {
+class WeatherViewController: UIViewController, WeatherView {
 
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
