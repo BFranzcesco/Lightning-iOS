@@ -5,6 +5,7 @@ use_frameworks!
 target 'Lightning' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'AlamofireObjectMapper', '~> 5.0'
 end
 
 target 'LightningTests' do

@@ -1,41 +1,39 @@
 import Foundation
 
-class WeatherInteractor: WeatherServiceDelegate, LocationDelegate {
-
-    let service: WeatherService
+class ForecastInteractor: ForecastServiceDelegate, LocationDelegate {
+    
+    let service: ForecastService
     let geolocator: GeoLocator
-    let delegate: WeatherInteractorDelegate
-
-    init(service: WeatherService, geolocator: GeoLocator, delegate: WeatherInteractorDelegate) {
+    let delegate: ForecastInteractorDelegate
+    
+    init(service: ForecastService, geolocator: GeoLocator, delegate: ForecastInteractorDelegate) {
         self.service = service
         self.geolocator = geolocator
         self.delegate = delegate
         service.delegate = self
         geolocator.delegate = self
     }
-
-    func weather() {
+    
+    func forecast() {
         geolocator.getCurrentLocation()
     }
-
+    
     //MARK: - ServiceDelegate
-
-    func onDataReceived(data: Data) {
-        let weather = Converter().dataToWeather(weatherData: data)
-        delegate.present(weather: weather)
+    func onDataReceived(data: [ForecastWeather]) {
+        delegate.present(forecast: data)
     }
-
+    
     func onError() {
         delegate.presentError()
     }
-
+    
     //MARK: - LocationDelegate
-
     func onLocationServicesDisabled() {
         delegate.presentError()
     }
-
+    
     func onLocationGot(location: Location) {
-        service.weatherData(basedOn: location)
+        service.forecast(basedOn: location)
     }
 }
+

@@ -17,4 +17,9 @@ class WeatherImage {
         }
         return WeatherImageName[weatherCode]!
     }
+    
+    func name(from forecastWeather: ForecastWeather) -> String {
+        let weatherCode = WeatherCodeHandler().code(from: forecastWeather)
+        return WeatherImageName[weatherCode]!
+    }
 }

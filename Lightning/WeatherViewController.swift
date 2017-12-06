@@ -8,6 +8,12 @@ class WeatherViewController: UIViewController, WeatherView {
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var nightVeil: UIView!
 
+    @IBAction func iconTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ForecastViewController")
+        self.present(controller, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

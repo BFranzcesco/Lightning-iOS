@@ -55,7 +55,7 @@ class WeatherInteractorTests: XCTestCase {
         var shouldFail = false
         var getWeatherDataBasedOnLocationIsCalled = false
 
-        override func getWeatherDataBasedOnLocation(location: Location) {
+        override func weatherData(basedOn location: Location) {
             getWeatherDataBasedOnLocationIsCalled = true
 
             if (shouldFail) {
